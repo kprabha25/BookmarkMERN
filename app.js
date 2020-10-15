@@ -6,6 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 var sassMiddleware = require('node-sass-middleware');
+//const cors = require('cors');
 
 // importing files
 const indexRouter = require('./routes/index');
@@ -21,8 +22,9 @@ mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/bookmark', {
   useNewUrlParser : true, 
   useFindAndModify: false, 
   useUnifiedTopology: true
-});
+}).then(()=>{console.log("MongoDb Successfully Connected ")}).catch(()=>{console.log("MongoDb Connection Failed ")});;
 
+//app.use(cors);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

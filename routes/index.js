@@ -78,4 +78,27 @@ router.patch('/:id', async(req, res)=>{
     }
 })
 
+/***/
+router.post('/save', async(req, res) => {
+    // const data = {
+    //     username: req.body,
+    //     age: 5
+    // };
+
+    try{
+        console.log(req.body)
+        res.json({
+            message: "Data Updated Successfully",
+            statusCode: 200            
+        });
+    } catch(err){
+        console.log(err)
+        res.status(500).json({
+            message: "Internal Server Error",
+            statusCode: 500
+        })
+    }
+
+})
+
 module.exports = router;

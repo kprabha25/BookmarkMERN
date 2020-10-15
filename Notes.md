@@ -73,3 +73,77 @@ PATCH Ex : http://localhost:5000/bookmark/5f86a1cf00b887cce649c6a5
 {
     "category": "Java"
 }
+
+-----------------------------
+class App extends React.Component{
+  state = {
+    title: '',
+    body: ''
+  }
+
+  handleChange = (event)=>{
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name] : value
+    })
+  }
+  submit = (event)=>{
+    event.preventDefault();
+
+    const payload = {
+      title: this.state.title,
+      body: this.state.body
+    }
+
+    //proxy: '/api/save',
+    //cors: 'http://localhost:5000/api/save',
+    axios({
+      url: '/api/save',
+      method: 'POST',
+      data: payload
+    })
+      .then(()=>{ 
+        console.log('Data has been sent to the server'); 
+      })
+      .catch(()=>{ 
+          console.log('Internal Server Error');
+      });
+
+  }
+
+  render(){
+    console.log('State : ' , this.state)
+
+    return(
+      <div>
+        <h2>Welcome to my App</h2>
+        <form onSubmit={this.submit}>
+          <div className="form-input">
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              value={ this.state.title }
+              onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <textarea
+                type="text"
+                name="body"
+                placeholder="body"
+                value= { this.state.body }
+                rows="5"
+                cols="20"              
+                onChange={this.handleChange}
+                ></textarea>
+              </div>
+              <button>Submit</button>
+        </form>
+      </div>
+    )
+  }
+}
