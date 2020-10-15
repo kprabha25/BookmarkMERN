@@ -16,7 +16,7 @@ const app = express();
 const log = console.log;
 const PORT = process.env.PORT || 8080; // Step 1
 
-// Step 2
+// Step 2 
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/bookmark', { 
   useNewUrlParser : true, 
   useFindAndModify: false, 
