@@ -16,7 +16,7 @@ const bookmarkRouter = require('./routes/bookmarks');
 const app = express();
 const log = console.log;
 //const PORT = process.env.PORT || process.env.LOCAL_PORT; // Step 1
-//const PORT = process.env.PORT || 8080; // Step 1
+const PORT = process.env.PORT || 8080; // Step 1
 
 // Step 2 
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/bookmark', { 
@@ -50,4 +50,8 @@ if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'));
 }
 
-module.exports = app;
+app.listen(PORT, function() { 
+  console.log(`Server listening on port ${PORT}.`);
+});
+
+//module.exports = app;
