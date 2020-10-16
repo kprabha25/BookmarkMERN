@@ -10,7 +10,7 @@
     "start": "node app.js",
     "devnodemon": "nodemon ./bin/www",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"npm run start\" \"npm run client\""
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"node app.js\" \"npm run client\""
   },
   "dependencies": {
     "axios": "^0.20.0",
