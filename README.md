@@ -1,17 +1,20 @@
 # Bookmark MERN  
 
 "scripts": {
+    "build": "cd client && npm run build",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www"
   },  
 
 npm run dev  
+npm run build
 
 https://account.mongodb.com/  
 
 //From Driver  
 MONGO_URL_ATLAS=mongodb+srv://******:****@cluster0.c0uc9.mongodb.net/bookmark?retryWrites=true&w=majority  
 MONGO_URL_LOCAL=mongodb://localhost:27017/bookmark  
+NODE_ENV = "development"  
 
 "start": "concurrently \"node app.js\" \"npm run client\""  
  "start": "node inspect ./bin/www"  
@@ -27,3 +30,23 @@ MONGO_URL_LOCAL=mongodb://localhost:27017/bookmark
   https://bookmern.herokuapp.com/ | https://git.heroku.com/bookmern.git  
 
   https://bookmern.herokuapp.com/
+
+
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node ./bin/www",
+    "devnodemon": "nodemon ./bin/www",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon start\" \"npm run client\""
+
+
+    //blog
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node ./bin/www",
+    "devnodemon": "nodemon ./bin/www",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon start\" \"npm run client\""

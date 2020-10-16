@@ -15,7 +15,8 @@ const bookmarkRouter = require('./routes/bookmarks');
 // Define Global Variables
 const app = express();
 const log = console.log;
-const PORT = process.env.PORT || 8080; // Step 1
+//const PORT = process.env.PORT || process.env.LOCAL_PORT; // Step 1
+//const PORT = process.env.PORT || 8080; // Step 1
 
 // Step 2 
 mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/bookmark', { 
@@ -44,5 +45,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //app.use('/api', indexRouter);
 app.use('/api/bookmarks', bookmarkRouter);
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+}
 
 module.exports = app;
