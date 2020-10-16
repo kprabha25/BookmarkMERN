@@ -8,6 +8,7 @@ import BookmarkInfo from './components/bookmarks/BookmarkInfo'
 import BookmarkAdd from './components/bookmarks/BookmarkAdd'
 import BookmarkEdit from './components/bookmarks/BookmarkEdit'
 
+import TodoLists from './components/Todos/TodoLists'
 
 function App(){
   return(
@@ -28,7 +29,7 @@ function Navigation(){
       <div className='container'>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/">Bookmarks</NavLink></li>
-          <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/Bookmarks">Todo</NavLink></li>
+          <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/TodoLists">Todo</NavLink></li>
         </ul>
       </div>
     </nav>    
@@ -38,11 +39,17 @@ function Navigation(){
 function Main(){
   return(
   <Switch>
-    <Router exact path="/" component={Home} />
-    <Router exact path="/bookmarks" component={BookmarkList} />
-    <Router exact path="/bookmarks/new" component={BookmarkAdd} />
-    <Router exact path="/bookmarks/:_id" component={BookmarkInfo} />
-    <Router exact path="/bookmarks/:_id/edit" component={BookmarkEdit} />
+    {/* 
+    <Route exact path="/" component={Home} /> 
+    <Route exact path="/bookmarks" component={BookmarkList} />
+    */}
+    <Route exact path="/" component={BookmarkList} />
+    <Route exact path="/bookmarks" component={BookmarkList} />
+    <Route exact path="/bookmarks/new" component={BookmarkAdd} />    
+    <Route exact path="/bookmarks/:_id" component={BookmarkInfo} />
+    <Route exact path="/bookmarks/:_id/edit" component={BookmarkEdit} />
+
+    <Route exact path="/TodoLists" component={TodoLists} />
 
   </Switch>
   )

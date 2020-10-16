@@ -42,7 +42,7 @@ app.use(sassMiddleware({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/api', indexRouter);
-app.use('/bookmark', bookmarkRouter);
+//app.use('/api', indexRouter);
+app.use('/api/bookmarks', bookmarkRouter);
 
 module.exports = app;

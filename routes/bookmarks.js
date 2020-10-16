@@ -20,8 +20,8 @@ router.post("/", (req, res)=> {
             statusCode: 403
         })
     }    
-    const { category,url,notes,domain,status,created_at,updated_at } = req.body;
-    const newbookmark = new Bookmark({ category,url,notes,domain,status,created_at,updated_at });
+    const { title, category,url,notes,domain,status,created_at,updated_at } = req.body;
+    const newbookmark = new Bookmark({ title,category,url,notes,domain,status:true,created_at:Date.now(),updated_at:Date.now() });
     newbookmark.save()
         .then((resp)=>{ res.status(201).json(resp) })
         .catch((err)=>{ res.status(400).json( { message: "Request Failed",statusCode: 400 } )

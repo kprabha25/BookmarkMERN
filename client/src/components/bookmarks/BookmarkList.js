@@ -22,18 +22,35 @@ function BookmarkList() {
             <h2>Bookmarks
             <Link to="/bookmarks/new" className="btn btn-primary float-right" >Add Bookmark</Link>
             </h2>
-            <hr />
-            {
-                bookmarks.map((bookmark) => {
-                    return (
-                        <div key={bookmark._id}>
-                            <h4><Link to={`/bookmarks/${bookmark._id}`} >{bookmark.title}</Link></h4>
-                            <small>_id: {bookmark._id}</small>
-                            <hr />
-                        </div>
-                    )
-                })
-            }
+            <div className="table-responsive">
+                <table className="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Domain</th>
+                            <th scope="col">Url</th>
+                        </tr>
+                    </thead>
+                    <tbody className="text-left">
+                        {
+                            bookmarks.map((bookmark, index) => {
+                                return (
+                                    <tr key={bookmark._id}>
+                                        <th scope="row"> { index = index + 1 } </th>
+                                        <td><Link to={`/bookmarks/${bookmark._id}`} >{bookmark.title}</Link></td>
+                                        <td>{bookmark.category}</td>
+                                        <td>{bookmark.domain}</td>
+                                        <td><a href={bookmark.url} target="_blank"  rel="noopener noreferrer">{bookmark.url}</a></td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     )
 } //Main end
