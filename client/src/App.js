@@ -5,6 +5,9 @@ import './App.css';
 import Home from './components/pages/Home'
 import BookmarkList from './components/bookmarks/BookmarkList'
 import BookmarkInfo from './components/bookmarks/BookmarkInfo'
+import BookmarkAdd from './components/bookmarks/BookmarkAdd'
+import BookmarkEdit from './components/bookmarks/BookmarkEdit'
+
 
 function App(){
   return(
@@ -25,7 +28,7 @@ function Navigation(){
       <div className='container'>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/">Bookmarks</NavLink></li>
-          <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/articles">Todo</NavLink></li>
+          <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/Bookmarks">Todo</NavLink></li>
         </ul>
       </div>
     </nav>    

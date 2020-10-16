@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let bookmarkSchema = new Schema({
+    "title": String,
     "category" : String,
     "url" : String,
     "notes" : String,

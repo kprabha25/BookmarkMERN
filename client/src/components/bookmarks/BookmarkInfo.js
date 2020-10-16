@@ -32,8 +32,8 @@ function BookmarkInfo(props) {
     return(
     <div>
         <h2>{bookmark.title}</h2>
-        <small>_id: {article._id}</small>
-        <p>{article.url}</p>
+        <small>_id: {bookmark._id}</small>
+        <p>{bookmark.url}</p>
         <div className="btn-group">
             <Link to={`/bookmarks/${bookmark._id}/edit`} className="btn btn-primary">Edit</Link>
             <button onClick={handleDelete} className="btn btn-danger">Delete</button>
