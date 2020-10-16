@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "devnodemon": "nodemon ./bin/www",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon start\" \"npm run client\""
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"npm start\" \"npm run client\""
   },
   "dependencies": {
     "axios": "^0.20.0",
