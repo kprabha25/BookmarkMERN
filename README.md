@@ -50,3 +50,30 @@ NODE_ENV = "development"
     "devnodemon": "nodemon ./bin/www",
     "client": "cd client && npm start",
     "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon start\" \"npm run client\""
+
+    //Success Heroku Local  
+    page"scripts": {
+    "server": "node app.js",
+    "client": "cd client && npm start",
+    "start": "npm run server",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+
+    //Success Local
+    "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node app.js",
+    "devnodemon": "nodemon ./bin/www",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"npm run start\" \"npm run client\""
+  },
+
+  //Heroku Production
+  "scripts": {
+    "server": "node app.js",
+    "client": "cd client && npm start",
+    "start": "npm run server",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+    },
