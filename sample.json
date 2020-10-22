@@ -1,0 +1,71 @@
+
+{
+    "product": {
+      "viewCount": 128,
+      "_id": "5ec6ae570270734b6bca38c6",
+      "name": "Vintage Armchair",
+      "sku": "jXxVSbZzv",
+      "price": 155,
+      "description": "New & Antique Armchairs at Vinterior. The final consideration when choosing an armchair is the size. Whilst they are a lot smaller than sofas, size can still prove.",
+      "productType": "furniture",
+      "mediaUrl": "https://res.cloudinary.com/dev-empty/image/upload/v1590079061/wb2ucyq32xzoddm9fe5d.jpg",
+      "createdAt": "2020-05-21T16:37:43.104Z",
+      "updatedAt": "2020-10-18T17:11:18.724Z",
+      "__v": 0
+    },
+    
+    "related": [
+      {
+        "viewCount": 129,
+        "_id": "5ec6ae570270734b6bca38c6",
+        "name": "Vintage Armchair",
+        "sku": "jXxVSbZzv",
+        "price": 155,
+        "description": "New & Antique Armchairs at Vinterior. The final consideration when choosing an armchair is the size. Whilst they are a lot smaller than sofas, size can still prove.",
+        "productType": "furniture",
+        "mediaUrl": "https://res.cloudinary.com/dev-empty/image/upload/v1590079061/wb2ucyq32xzoddm9fe5d.jpg",
+        "createdAt": "2020-05-21T16:37:43.104Z",
+        "updatedAt": "2020-10-18T17:11:34.563Z",
+        "__v": 0
+      },
+      {
+        "viewCount": 128,
+        "_id": "5ec6ad420270734b6bca38c0",
+        "name": "Wooden Chair",
+        "sku": "gTSVF5TQ4",
+        "price": 250,
+        "description": "Plywood Chair, Wood Sofa, Plywood Furniture, Cool Furniture, Furniture Design, Wooden Chair Plans, Chair Design Wooden, Dinning Chairs, Table And Chairs.",
+        "productType": "furniture",
+        "mediaUrl": "https://res.cloudinary.com/dev-empty/image/upload/v1590078784/oelygng3oujixkht5por.jpg",
+        "createdAt": "2020-05-21T16:33:06.659Z",
+        "updatedAt": "2020-10-18T12:06:40.893Z",
+        "__v": 0
+      },
+      {
+        "viewCount": 111,
+        "_id": "5ec6ad6c0270734b6bca38c1",
+        "name": "Arm Accent Chair",
+        "sku": "kki504tlC",
+        "price": 255,
+        "description": "Buy products related to arm accent chairs and see what customers say about arm accent chairs",
+        "productType": "furniture",
+        "mediaUrl": "https://res.cloudinary.com/dev-empty/image/upload/v1590078825/aieqrzivt1edmimub0bj.jpg",
+        "createdAt": "2020-05-21T16:33:48.377Z",
+        "updatedAt": "2020-10-18T12:06:46.768Z",
+        "__v": 0
+      },
+      {
+        "viewCount": 58,
+        "_id": "5ec6adbe0270734b6bca38c2",
+        "name": "Fabric Sofa",
+        "sku": "wzEcUwkuQ",
+        "price": 300,
+        "description": "Explore the DFS fabric sofa collection & get 4 years interest free credit with no deposit required when you shop online now.",
+        "productType": "furniture",
+        "mediaUrl": "https://res.cloudinary.com/dev-empty/image/upload/v1590078908/nayx9yho8xye9n8kte43.jpg",
+        "createdAt": "2020-05-21T16:35:10.207Z",
+        "updatedAt": "2020-10-18T12:06:52.628Z",
+        "__v": 0
+      }
+    ]
+  }

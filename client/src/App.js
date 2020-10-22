@@ -7,6 +7,7 @@ import BookmarkList from './components/bookmarks/BookmarkList'
 import BookmarkInfo from './components/bookmarks/BookmarkInfo'
 import BookmarkAdd from './components/bookmarks/BookmarkAdd'
 import BookmarkEdit from './components/bookmarks/BookmarkEdit'
+import SearchList from './components/bookmarks/SearchList'
 
 import TodoLists from './components/Todos/TodoLists'
 
@@ -29,6 +30,7 @@ function Navigation(){
       <div className='container'>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/">Bookmarks</NavLink></li>
+          <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/bookmarks">List</NavLink></li>
           <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/TodoLists">Todo</NavLink></li>
         </ul>
       </div>
@@ -42,8 +44,9 @@ function Main(){
     {/* 
     <Route exact path="/" component={Home} /> 
     <Route exact path="/bookmarks" component={BookmarkList} />
-    */}
     <Route exact path="/" component={BookmarkList} />
+    */}
+    <Route exact path="/" component={SearchList} />
     <Route exact path="/bookmarks" component={BookmarkList} />
     <Route exact path="/bookmarks/new" component={BookmarkAdd} />    
     <Route exact path="/bookmarks/:_id" component={BookmarkInfo} />

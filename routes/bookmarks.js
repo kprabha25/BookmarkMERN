@@ -68,4 +68,23 @@ router.patch("/:id", (req, res)=> {
     })
 })
 
+//To Service
+router.post('/search', function(req, res, next) {
+    
+    const input_data = req.body.search
+    console.log("Search-1 : ",input_data)
+    Bookmark.find({
+        "$or": [
+            { "title" : { "$regex": input_data, "$options":"i"} },
+            { "category" :   { "$regex": input_data, "$options":"i"} }, 
+            { "url" :           { "$regex": input_data, "$options":"i"} }, 
+            { "notes" :        { "$regex": input_data, "$options":"i"} }, 
+            { "domain" :    { "$regex": input_data, "$options":"i"} }
+        ]
+    })
+        .then((resp)=>{ res.status(200).json(resp) })
+        .catch((err)=>{ res.status(400).json( { message: "Request Failed",statusCode: 400 } )
+    })
+  });
+
 module.exports = router;
