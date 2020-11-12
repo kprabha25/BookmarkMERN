@@ -6,7 +6,7 @@ const Bookmark = require('../src/models/bookmark');
 
 //To get all bookmar
 router.get("/", (req, res)=> {
-    Bookmark.find()
+    Bookmark.find().sort({created_at: -1, category : 1})
         .then((resp)=>{ res.status(200).json(resp) })
         .catch((err)=>{ res.status(400).json( { message: "Request Failed",statusCode: 400 } )
     })
@@ -67,5 +67,24 @@ router.patch("/:id", (req, res)=> {
         .catch((err)=>{ res.status(400).json( { message: "Request Failed",statusCode: 400 } )
     })
 })
+
+//To Service
+router.post('/search', function(req, res, next) {
+    
+    const input_data = req.body.search
+    console.log("Search-1 : ",input_data)
+    Bookmark.find({
+        "$or": [
+            { "title" : { "$regex": input_data, "$options":"i"} },
+            { "category" :   { "$regex": input_data, "$options":"i"} }, 
+            { "url" :           { "$regex": input_data, "$options":"i"} }, 
+            { "notes" :        { "$regex": input_data, "$options":"i"} }, 
+            { "domain" :    { "$regex": input_data, "$options":"i"} }
+        ]
+    }).sort({created_at: -1, category : 1})
+        .then((resp)=>{ res.status(200).json(resp) })
+        .catch((err)=>{ res.status(400).json( { message: "Request Failed",statusCode: 400 } )
+    })
+  });
 
 module.exports = router;

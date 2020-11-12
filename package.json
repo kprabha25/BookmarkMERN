@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
@@ -24,7 +23,8 @@
     "lodash": "^4.17.20",
     "mongoose": "^5.10.9",
     "morgan": "~1.9.1",
-    "node-sass-middleware": "^0.11.0"
+    "node-sass-middleware": "^0.11.0",
+    "react-hook-form": "^6.9.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.5"
